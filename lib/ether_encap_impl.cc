@@ -101,7 +101,7 @@ ether_encap_impl::from_tap(pmt::pmt_t msg) {
 
 	switch(ehdr->type) {
 	case 0x0008: {
-		std::cout << "ether type: IP" << std::endl;
+		//std::cout << "ether type: IP" << std::endl;
 
 		char *buf = static_cast<char*>(malloc(len + 8 - sizeof(ethernet_header)));
 		buf[0] = 0xaa;
@@ -118,10 +118,10 @@ ether_encap_impl::from_tap(pmt::pmt_t msg) {
 		break;
 	}
 	case 0x0608:
-		std::cout << "ether type: ARP " << std::endl;
+		//std::cout << "ether type: ARP " << std::endl;
 		break;
 	default:
-		std::cout << "unknown ether type" << std::endl;
+		//std::cout << "unknown ether type" << std::endl;
 		break;
 	}
 
